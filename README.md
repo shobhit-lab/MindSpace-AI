@@ -2,7 +2,7 @@
 
 **Brainstorm together in 3D. AI groups the ideas, your team votes and decides, and you leave with an action plan.**
 
-MindSpace AI is a collaborative brainstorming room for Meta Quest, built in Unity. Ideas become floating 3D cards that everyone in the room can grab and move. One button asks Claude to group the cards into themes, shortlist the best three and draft a five-step plan. The team votes, presses Decide, and exports a Markdown report.
+MindSpace AI is a collaborative brainstorming room for Meta Quest, built in Unity. Ideas become floating 3D cards that everyone in the room can grab and move. One button asks an AI model to group the cards into themes, shortlist the best three and draft a five-step plan. The team votes, presses Decide, and exports a Markdown report.
 
 > **Status:** hackathon prototype. The server was tested with scripted requests, and the Unity project was opened and run in Play mode in the Unity 6.6 Editor (the panel renders and connects to the server). It has **not** been tested on a Quest headset yet.
 
@@ -46,7 +46,7 @@ Packages/manifest.json                package versions used
 - **Unity 6** (developed on 6000.6.9f1), Universal 3D (URP) project
 - Packages: XR Interaction Toolkit, XR Plugin Management, OpenXR Plugin, Input System, TextMesh Pro (included with Unity UI)
 - **Node.js 18 or newer**
-- Optional: an Anthropic API key for Claude-based grouping
+- Optional: an Anthropic API key for AI-based grouping
 - For headset builds: Meta Quest with developer mode, Android build support in Unity
 
 ## Quick start
@@ -58,7 +58,7 @@ cd server
 node server.js
 ```
 
-You should see `MindSpace server on :8787`. To use Claude, set a key first:
+You should see `MindSpace server on :8787`. To use the AI model, set a key first:
 
 ```bash
 # macOS / Linux
@@ -68,7 +68,7 @@ set ANTHROPIC_API_KEY=your-key
 node server.js
 ```
 
-Optional variables: `PORT` (default `8787`) and `ANTHROPIC_MODEL` (default `claude-sonnet-5-5`).
+Optional variables: `PORT` (default `8787`) and `ANTHROPIC_MODEL` (choose which model to use).
 
 Check it in a browser at `http://localhost:8787/api/room/DEMO`. A `404` at `http://localhost:8787/` is normal, because the server only answers `/api/room/...`.
 
@@ -154,6 +154,10 @@ All routes are under `/api/room/{code}`. The room is created on first use.
 ## Roadmap
 
 Avatars and spatial voice, hand tracking, WebSocket sync, facilitator role and room permissions, persistent storage, and shareable reports.
+
+## Web demo
+
+A browser version of the same loop (shared cards, live presence, AI grouping, export) is available here: https://claude.ai/artifact/9yQEgXyZ7BTwYekPE4UNnZ
 
 ## License
 
