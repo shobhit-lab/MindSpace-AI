@@ -155,10 +155,6 @@ All routes are under `/api/room/{code}`. The room is created on first use.
 
 Avatars and spatial voice, hand tracking, WebSocket sync, facilitator role and room permissions, persistent storage, and shareable reports.
 
-## Web demo
-
-A browser version of the same loop (shared cards, live presence, AI grouping, export) is available here: https://claude.ai/artifact/9yQEgXyZ7BTwYekPE4UNnZ
-
 ## License
 
 MIT. See [LICENSE](LICENSE). Unity, XR Interaction Toolkit, TextMesh Pro and other packages keep their own licenses.
